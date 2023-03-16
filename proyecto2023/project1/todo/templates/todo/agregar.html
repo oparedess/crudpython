@@ -1,0 +1,9 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+    <form class="col-md-3" action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-outline-success btn-sm">Añadir</button>
+    </form>
+{% endblock %}

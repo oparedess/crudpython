@@ -1,0 +1,16 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+    <h1>Tareas nuevas</h1>
+    <a class="btn btn-outline-primary btn-sm" role="button" href="{% url 'agregar' nbar %}">Agregar actividad</a>
+    <div class="clearfix">&nbsp;</div>
+    <ul class="list-group col-md-3">
+        {% for tarea in tareas %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ tarea }}
+            <a class="btn btn-outline-danger btn-sm" href="{% url 'eliminar' tarea.id nbar %}">Eliminar</a>
+            <a class="btn btn-outline-secondary btn-sm" href="{% url 'editar' tarea.id nbar %}">Editar</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
